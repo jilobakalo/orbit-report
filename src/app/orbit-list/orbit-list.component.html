@@ -1,0 +1,18 @@
+<!-- <app-orbit-list [satellites]="displayList"></app-orbit-list> -->
+<h3>Orbit Report</h3>
+<table>
+   <tr class="header-row">
+      <th class="sortable"(click)="sort('name')">Name</th>
+      <th class="sortable"(click)="sort('type')" to>Type</th>
+      <th>Operational</th>
+      <th>Orbit Type</th>
+      <th>Launch Date</th>
+   </tr>
+<tr *ngFor="let Satellite of satellites">
+   <td>{{Satellite.name}}</td>
+   <td [class.warning]="Satellite.shouldShowWarning()">{{Satellite.type}}</td>
+   <td>{{Satellite.operational}}</td> 
+   <td>{{Satellite.orbitType}}</td>
+   <td>{{Satellite.launchDate}}</td>
+</tr>
+</table>
